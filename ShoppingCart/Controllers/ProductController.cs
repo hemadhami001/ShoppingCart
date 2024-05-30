@@ -1,6 +1,6 @@
 ﻿using Application.Common.Interfaces;
 using Application.Products.Commands.CreateProduct;
-
+using Application.Products.Queries;
 using Infrastructure.Persistence;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -21,9 +21,10 @@ namespace ShoppingCart.Controllers
 
         // GET: api/<ProductController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<List<ProductVm>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var result await Mediator.Send(new GetProducts());
+            return result;
         }
 
         // GET api/<ProductController>/5
@@ -64,5 +65,7 @@ namespace ShoppingCart.Controllers
         }
     }
 
-    
+    public class ProductVm
+    {
+    }
 }
