@@ -24,7 +24,7 @@ namespace Application.Common.Models
             this.TotalPages = totalPages;
         }
 
-        public async  static Task<PaginationList<T>> CreatePaginationAsync(IQueryable<T> source, int pageNumber, int pageSize)
+        public static async Task<PaginationList<T>> CreatePaginationAsync(IQueryable<T> source, int pageNumber, int pageSize)
         {
             var items = await source.Skip((pageNumber -1)).Take(pageSize).ToListAsync();
             var totalCount = await source.CountAsync();
