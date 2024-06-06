@@ -15,6 +15,7 @@ namespace Domain
 
         public string Description { get; set; }
 
-        public int created_at { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

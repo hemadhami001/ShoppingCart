@@ -11,7 +11,9 @@ namespace Domain
         public int Quantity { get; set; }
 
         public DateTime created_at { get; set; }  
-        public ICollection<Cartitem> Cartitems { get; set;}
-        public ICollection<Orderitem> Orderitems { get; set;}
+        public ICollection<CartItem> CartItems { get; set;}
+        public ICollection<OderItem> OrderItems { get; set;}
+        public Category Category { get; set; }
+        public int CategoryId { get; set; }
     }
 }

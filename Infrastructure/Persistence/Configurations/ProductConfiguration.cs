@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Persistence.Configurations
 {
-    internal class ProductConfiguration : IEntityTypeConfiguration<Product>
+    public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.HasMany(x => x.Cartitems)
+            builder.HasMany(x => x.CartItems)
                 .WithOne(x => x.Products)
                 .HasForeignKey(x => x.ProductId);
 
-            builder.HasMany(x=>x.Cartitems)
+            builder.HasMany(x=>x.CartItems)
                 .WithOne(x => x.Products)
                 .HasForeignKey(x => x.ProductId);
         }
