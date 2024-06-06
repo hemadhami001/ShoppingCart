@@ -13,5 +13,6 @@ namespace Domain
         public int OrderDate { get; set; }
 
         public decimal TotalPrice { get; set; }
+        public ICollection<OderItem> OderItems { get; set; }
     }
 }
