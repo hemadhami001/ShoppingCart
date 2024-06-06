@@ -1,7 +1,7 @@
 ﻿using Application.Common.Interfaces;
-using Application.Common.Models;
 using Application.Products.Commands.CreateProduct;
 using Application.Products.Queries;
+using Domain;
 using Infrastructure.Persistence;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,10 +19,9 @@ namespace ShoppingCart.Controllers
         {
             this._dbContext = dbContext; 
         }
-
         // GET: api/<ProductController>
         [HttpGet]
-        public async Task <List<ProductVm>> Get()
+        public async Task<List<ProductVm>> Get()
         {
             var result = await Mediator.Send(new GetProducts());
             return result;

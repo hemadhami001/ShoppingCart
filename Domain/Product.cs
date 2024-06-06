@@ -10,6 +10,8 @@ namespace Domain
 
         public int Quantity { get; set; }
 
-        public DateTime created_at { get; set; }         
+        public DateTime created_at { get; set; }  
+        public ICollection<Cartitem> Cartitems { get; set;}
+        public ICollection<Orderitem> Orderitems { get; set;}
     }
 }
