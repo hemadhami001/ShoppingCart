@@ -22,9 +22,9 @@ namespace ShoppingCart.Controllers
 
         // GET: api/<ProductController>
         [HttpGet]
-        public async Task<ActionResult<PaginationList<ProductVm>>> Get([FromQuery] GetProducts query)
+        public async Task <List<ProductVm>> Get()
         {
-            var result = await Mediator.Send(query);
+            var result = await Mediator.Send(new GetProducts());
             return result;
         }
 
