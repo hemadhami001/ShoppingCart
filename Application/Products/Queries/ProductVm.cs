@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Products.Queries
 {
-    public class ProductVm
+    public class ProductVm()
     {
         public string ProductName { get; set; }
         public string Description { get; set; }

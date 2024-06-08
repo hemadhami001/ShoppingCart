@@ -21,6 +21,8 @@ namespace Infrastructure.Persistence.Configurations
             builder.HasMany(x=>x.CartItems)
                 .WithOne(x => x.Products)
                 .HasForeignKey(x => x.ProductId);
+
+            builder.Property(x=>x.CategoryId).IsRequired(false);
         }
     }
 }

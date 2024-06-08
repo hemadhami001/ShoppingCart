@@ -1,4 +1,5 @@
 ﻿using Application.Common.Interfaces;
+using Application.Common.Models;
 using Application.Products.Commands.CreateProduct;
 using Application.Products.Queries;
 using Domain;
@@ -23,7 +24,7 @@ namespace ShoppingCart.Controllers
         [HttpGet]
         public async Task<List<ProductVm>> Get()
         {
-            var result = await Mediator.Send(new GetProducts());
+            var result = await Mediator.Send(new GetProducts())
             return result;
         }
 

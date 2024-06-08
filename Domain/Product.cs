@@ -14,6 +14,6 @@ namespace Domain
         public ICollection<CartItem> CartItems { get; set;}
         public ICollection<OderItem> OrderItems { get; set;}
         public Category Category { get; set; }
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
     }
 }
