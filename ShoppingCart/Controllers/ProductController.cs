@@ -22,7 +22,7 @@ namespace ShoppingCart.Controllers
         }
         // GET: api/<ProductController>
         [HttpGet]
-        public async Task<List<ProductVm>> Get()
+        public async Task<PaginationList<ProductVm>> Get()
         {
             var result = await Mediator.Send(new GetProducts());
             return result;
@@ -64,9 +64,5 @@ namespace ShoppingCart.Controllers
         public void Delete(int id)
         {
         }
-    }
-
-    public class ProductVm
-    {
     }
 }

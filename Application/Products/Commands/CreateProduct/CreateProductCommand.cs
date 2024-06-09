@@ -31,7 +31,7 @@ namespace Application.Products.Commands.CreateProduct
                 ProductName = command.ProductName,
                 Price = command.Price,
                 Quantity = command.Quantity,
-                created_at = DateTime.UtcNow,
+                CreatedDate = DateTime.UtcNow,
                 Description = command.Description,
             };
             _dbContext.Products.Add(entity);
