@@ -22,7 +22,7 @@ namespace Infrastructure.Persistence.Configurations
                 .WithOne(x => x.Products)
                 .HasForeignKey(x => x.ProductId);
 
-            builder.Property(x=>x.CategoryId).IsRequired(false);
+            //builder.Property(x=>x.CategoryId).IsRequired(false);
         }
     }
 }

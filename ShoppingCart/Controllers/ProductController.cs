@@ -24,7 +24,7 @@ namespace ShoppingCart.Controllers
         [HttpGet]
         public async Task<List<ProductVm>> Get()
         {
-            var result = await Mediator.Send(new GetProducts())
+            var result = await Mediator.Send(new GetProducts());
             return result;
         }
 
