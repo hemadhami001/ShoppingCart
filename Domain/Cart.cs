@@ -10,5 +10,6 @@ namespace Domain
     {
         public int Id { get; set; }
         public decimal TotalPrice { get; set; }
+        public ICollection<CartItem> CartItems { get; set; }
     }
 }
