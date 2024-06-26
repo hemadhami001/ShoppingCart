@@ -32,6 +32,7 @@ namespace Application.Products.Queries
                 Description = x.Description,
                 Price = x.Price,
                 Quantity = x.Quantity,
+               
             }).PaginationListAsync(request.PageNumber, request.PageSize);
             return items;
         }
