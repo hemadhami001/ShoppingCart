@@ -15,6 +15,13 @@ export class ProductComponent {
 constructor(private _apiService:ApiService){ }
 
  addProduct(){
-this._apiService.addProduct(this.product);
+this._apiService.addProduct(this.product).subscribe(
+  res=>{
+
+  },
+  err=>{
+    
+  }
+);
  }
 }
