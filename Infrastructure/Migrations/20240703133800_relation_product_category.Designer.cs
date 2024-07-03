@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240702154025_relation_product_category")]
+    [Migration("20240703133800_relation_product_category")]
     partial class relation_product_category
     {
         /// <inheritdoc />
@@ -88,7 +88,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Domain.OderItem", b =>
