@@ -34,6 +34,7 @@ namespace Application.Products.Commands.CreateProduct
                 Quantity = command.Quantity,
                 CreatedDate = DateTime.UtcNow,
                 Description = command.Description,
+                CategoryId = command.CategoryId,
             };
             _dbContext.Products.Add(entity);
             //await _dbContext.SaveChangesAsync(cancellationToken);
