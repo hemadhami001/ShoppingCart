@@ -25,16 +25,16 @@ namespace Application.Products.Commands.CreateProduct
         {
             this._dbContext = context;
         }
-        public async Task<int> Handle(CreateProductCommand command, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
             var entity = new Product
             {
-                ProductName = command.ProductName,
-                Price = command.Price,
-                Quantity = command.Quantity,
+                ProductName = request.ProductName,
+                Price = request.Price,
+                Quantity = request.Quantity,
                 CreatedDate = DateTime.UtcNow,
-                Description = command.Description,
-                CategoryId = command.CategoryId,
+                Description = request.Description,
+                CategoryId = request.CategoryId,
             };
             _dbContext.Products.Add(entity);
             //await _dbContext.SaveChangesAsync(cancellationToken);

@@ -23,7 +23,7 @@ namespace ShoppingCart.Controllers
         }
         // GET: api/<ProductController>
         [HttpGet]
-        public async Task<PaginationList<CategoryVm>> Get()
+        public async Task<PaginationList<ProductVm>> Get()
         {
             var result = await Mediator.Send(new GetProducts());
             return result;

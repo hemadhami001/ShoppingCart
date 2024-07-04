@@ -33,7 +33,7 @@ namespace ShoppingCart.Controllers
 
         // POST api/<CategoryController>
         [HttpPost]
-        public async Task<int> Post([FromBody] CreateCategoryCommands command, CancellationToken cancellationToken)
+        public async Task<int> Post([FromBody] CreateCategoryCommand command, CancellationToken cancellationToken)
         {
             return await Mediator.Send(command, cancellationToken);
         }

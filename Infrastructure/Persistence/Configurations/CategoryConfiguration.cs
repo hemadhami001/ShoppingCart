@@ -17,7 +17,7 @@ namespace Infrastructure.Persistence.Configurations
             builder.HasMany(x => x.Products)
                    .WithOne(x => x.Category)
                    .OnDelete(DeleteBehavior.Restrict)
-                   .HasForeignKey(x => x.CategoryId);
+                   .HasForeignKey(x => x.GetCategoryId());
         }
     }
 }

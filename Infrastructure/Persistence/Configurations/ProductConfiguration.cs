@@ -26,7 +26,7 @@ namespace Infrastructure.Persistence.Configurations
            builder.HasOne(x => x.Category)
                .WithMany(x=>x.Products)
                .OnDelete(DeleteBehavior.Restrict) 
-               .HasForeignKey(x=>x.CategoryId);
+               .HasForeignKey(x=>x.GetCategoryId());
                
 
             //builder.Property(x=>x.CategoryId).IsRequired(false);

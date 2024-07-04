@@ -9,26 +9,26 @@ using System.Threading.Tasks;
 
 namespace Application.Categories.Commands.CreateCategory
 {
-    public class CreateCategoryCommands:IRequest<int>
+    public class CreateCategoryCommand:IRequest<int>
     {
         public string Name { get; set; }
         public string Description { get; set; }
 
     }
-    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommands, int>
+    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, int>
     {
         private readonly IApplicationDbContext _dbContext;
         public CreateCategoryCommandHandler(IApplicationDbContext context)
         {
             this._dbContext = context;
         }
-        public async Task<int> Handle(CreateCategoryCommands command, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
             var entity = new Category
             {
-                Name = command.Name,
+                Name = request.Name,
                 CreatedDate = DateTime.UtcNow,
-                Description = command.Description,
+                Description = request.Description,
             };
             _dbContext.Categories.Add(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
