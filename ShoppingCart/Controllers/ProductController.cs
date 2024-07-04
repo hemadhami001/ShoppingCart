@@ -1,13 +1,14 @@
 ﻿using Application.Common.Interfaces;
 using Application.Common.Models;
 using Application.Products.Commands.CreateProduct;
-using Application.Products.Queries;
+using Application.Products.Queries.GetProducts;
 using Domain;
 using Infrastructure.Persistence;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+//E:\Web Application\ShoppingCart\ShoppingCart\Controllers\ProductController.cs
 
 namespace ShoppingCart.Controllers
 {
@@ -22,7 +23,7 @@ namespace ShoppingCart.Controllers
         }
         // GET: api/<ProductController>
         [HttpGet]
-        public async Task<PaginationList<ProductVm>> Get()
+        public async Task<PaginationList<CategoryVm>> Get()
         {
             var result = await Mediator.Send(new GetProducts());
             return result;

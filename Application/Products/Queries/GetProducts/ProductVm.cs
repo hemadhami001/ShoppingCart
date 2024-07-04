@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Products.Queries
+namespace Application.Products.Queries.GetProducts
 {
-    public class ProductVm()
+    public class CategoryVm()
     {
         public string ProductName { get; set; }
         public string Description { get; set; }

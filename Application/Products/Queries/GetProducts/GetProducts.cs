@@ -10,29 +10,29 @@ using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
-namespace Application.Products.Queries
+namespace Application.Products.Queries.GetProducts
 {
-    public class GetProducts : IRequest<PaginationList<ProductVm>>
+    public class GetProducts : IRequest<PaginationList<CategoryVm>>
     {
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
     }
-    public class GetProductsHandler : IRequestHandler<GetProducts, PaginationList<ProductVm>>
+    public class GetProductsHandler : IRequestHandler<GetProducts, PaginationList<CategoryVm>>
     {
         private readonly IApplicationDbContext _context;
         public GetProductsHandler(IApplicationDbContext context)
         {
-            this._context = context;
+            _context = context;
         }
-        public async Task<PaginationList<ProductVm>> Handle(GetProducts request, CancellationToken cancellationToken)
+        public async Task<PaginationList<CategoryVm>> Handle(GetProducts request, CancellationToken cancellationToken)
         {
-            var items = await _context.Products.Select(x => new ProductVm
+            var items = await _context.Products.Select(x => new CategoryVm
             {
                 ProductName = x.ProductName,
                 Description = x.Description,
                 Price = x.Price,
                 Quantity = x.Quantity,
-                              
+
             }).PaginationListAsync(request.PageNumber, request.PageSize);
             return items;
         }
