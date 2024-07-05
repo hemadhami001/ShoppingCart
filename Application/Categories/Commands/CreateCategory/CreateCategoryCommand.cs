@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Categories.Commands.CreateCategory
 {
-    public class CreateCategoryCommand:IRequest<int>
+    public class CreateCategoryCommand : IRequest<int>
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -22,13 +22,13 @@ namespace Application.Categories.Commands.CreateCategory
         {
             this._dbContext = context;
         }
-        public async Task<int> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateCategoryCommand command, CancellationToken cancellationToken)
         {
             var entity = new Category
             {
-                Name = request.Name,
+                Name = command.Name,
                 CreatedDate = DateTime.UtcNow,
-                Description = request.Description,
+                Description = command.Description,
             };
             _dbContext.Categories.Add(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
@@ -36,4 +36,3 @@ namespace Application.Categories.Commands.CreateCategory
         }
     }
 }
-
