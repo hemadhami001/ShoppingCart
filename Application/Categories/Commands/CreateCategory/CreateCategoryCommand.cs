@@ -27,7 +27,7 @@ namespace Application.Categories.Commands.CreateCategory
             var entity = new Category
             {
                 Name = command.Name,
-                CreatedDate = DateTime.UtcNow,
+                CreatedAt = DateTime.UtcNow,
                 Description = command.Description,
             };
             _dbContext.Categories.Add(entity);

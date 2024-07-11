@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Category.Queries.GetCategory
+namespace Application.Categories.Queries.GetCategory
 {
     public class CategoryVm
     {
