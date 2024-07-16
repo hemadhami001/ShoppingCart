@@ -21,6 +21,8 @@
                 <input type="text" class="form-control" [(ngModel)]="product.price">
             
         </div>
+    </div>
+    <div class="row">
         <div class="col-4">
             <label for="quantity">
                 Quantity
@@ -35,14 +37,9 @@
                 <input type="text" class="form-control" [(ngModel)]="product.categoryId">
         </div>
 
-        <div class="col-4">
-            <label for="Category">
-                Category
-            </label>
+        <div class="col-4 mt-4">
                 <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
         </div>
     </div>
 </div>
 
-
-<button (click)="addProduct()">Add Product</button>

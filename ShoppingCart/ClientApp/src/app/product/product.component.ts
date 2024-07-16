@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from '../Common/Models/product.model';
+import { Product } from '../common/Models/product.model';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 
@@ -17,11 +17,11 @@ constructor(private _apiService:ApiService){ }
  addProduct(){
 this._apiService.addProduct(this.product).subscribe(
   res=>{
-
+    alert("Successfully Added Product");
   },
   err=>{
-    
-  }
-);
+   console.log(err); 
+   }
+  );
  }
 }
