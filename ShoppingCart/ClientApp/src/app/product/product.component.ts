@@ -3,6 +3,7 @@ import { Product } from '../common/Models/product.model';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 
+
 @Component({
   selector: 'app-product',
   standalone: true,
