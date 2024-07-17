@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { Product } from '../Common/Models/product.model';
-import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 
 
 @Component({
   selector: 'app-product',
-  standalone: true,
-  imports: [FormsModule],
+  standalone: false,
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
